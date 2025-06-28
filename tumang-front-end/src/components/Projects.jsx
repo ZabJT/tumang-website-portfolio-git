@@ -65,7 +65,7 @@ const projects = [
     description:
       "A portal for Bulldogs Exchange. A school-based project for the university's merchandise store. It is only frontend and it is not live.",
     image: NUBE2,
-    images: [NUBE1, NUBE2],
+    images: [NUBE2, NUBE1],
     technologies: ["React"],
   },
   {
@@ -142,20 +142,52 @@ export default function Projects() {
                   width: { xs: "100%", sm: 340, md: 340 },
                   maxWidth: 340,
                   cursor: "pointer",
+                  position: "relative",
                   "&:hover": {
                     transform: "scale(1.03)",
                     boxShadow: "0 12px 24px -8px rgba(0, 0, 0, 0.56)",
+                    ".project-image-overlay": {
+                      opacity: 1,
+                    },
                   },
                 }}
                 onClick={() => handleCardClick(project.images)}
               >
-                <CardMedia
-                  component="img"
-                  height="180"
-                  image={project.image}
-                  alt={project.title}
-                  sx={{ objectFit: "cover" }}
-                />
+                <Box sx={{ position: "relative" }}>
+                  <CardMedia
+                    component="img"
+                    height="180"
+                    image={project.image}
+                    alt={project.title}
+                    sx={{ objectFit: "cover" }}
+                  />
+                  <Box
+                    className="project-image-overlay"
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      bgcolor: "rgba(30,30,30,0.72)",
+                      color: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      opacity: 0,
+                      transition: "opacity 0.3s",
+                      fontWeight: 500,
+                      fontSize: 15,
+                      letterSpacing: 0.5,
+                      textAlign: "center",
+                      zIndex: 2,
+                      borderTopLeftRadius: 12,
+                      borderTopRightRadius: 12,
+                    }}
+                  >
+                    Click here to see images of the project
+                  </Box>
+                </Box>
                 <CardContent sx={{ pb: 0 }}>
                   <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
                     {project.title}
