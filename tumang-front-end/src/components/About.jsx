@@ -52,7 +52,7 @@ export default function About() {
         </Typography>
         <Typography
           variant="body1"
-          sx={{ color: "#a1a1aa", mb: 4, fontSize: 18, textAlign: "justify" }}
+          sx={{ color: "#fff", mb: 4, fontSize: 18, textAlign: "justify" }}
         >
           Hi! I'm Zabdiel Tumang, but you can call me Zab. I'm a 4th-year IT
           student from National University – Manila, specializing in Mobile and

@@ -106,10 +106,7 @@ export default function Contact() {
         <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
           Get In Touch
         </Typography>
-        <Typography
-          variant="body1"
-          sx={{ color: "#a1a1aa", mb: 6, fontSize: 18 }}
-        >
+        <Typography variant="body1" sx={{ color: "#fff", mb: 6, fontSize: 18 }}>
           Have a project in mind or want to work together? I'd love to hear from
           you!
         </Typography>
@@ -139,7 +136,7 @@ export default function Contact() {
                     >
                       {info.icon}
                       <Box>
-                        <Typography variant="body2" sx={{ color: "#a1a1aa" }}>
+                        <Typography variant="body2" sx={{ color: "#fff" }}>
                           {info.label}
                         </Typography>
                         {info.link ? (
@@ -174,7 +171,7 @@ export default function Contact() {
                       href={social.url}
                       target="_blank"
                       sx={{
-                        color: "#a1a1aa",
+                        color: "#fff",
                         bgcolor: "#181f2a",
                         "&:hover": { color: "#1565C0", bgcolor: "#232b39" },
                       }}

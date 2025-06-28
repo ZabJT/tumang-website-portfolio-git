@@ -6,7 +6,7 @@ export default function Footer() {
     <Box
       sx={{
         bgcolor: "#181f2a",
-        color: "#a1a1aa",
+        color: "#fff",
         py: 2,
         textAlign: "center",
         mt: 8,

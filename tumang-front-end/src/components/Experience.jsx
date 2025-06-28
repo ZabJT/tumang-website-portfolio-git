@@ -60,14 +60,11 @@ export default function Experience() {
         <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
           Experience
         </Typography>
-        <Typography
-          variant="body1"
-          sx={{ color: "#a1a1aa", mb: 6, fontSize: 18 }}
-        >
+        <Typography variant="body1" sx={{ color: "#fff", mb: 6, fontSize: 18 }}>
           My journey and the experiences that shaped my programming skills. I
           also included my previous resume here in case you would like to see
-          more of my past work experiences. Please take note that it may not
-          always be fully up to date.{" "}
+          more of my past work experiences. Please note it may not always be
+          fully up to date.{" "}
           <a
             href="/TumangResume.pdf"
             target="_blank"
@@ -122,16 +119,14 @@ export default function Experience() {
                   </Typography>
                   <Stack direction="row" spacing={2} mt={1} mb={2}>
                     <Stack direction="row" alignItems="center" spacing={0.5}>
-                      <CalendarMonthIcon
-                        sx={{ color: "#a1a1aa", fontSize: 18 }}
-                      />
-                      <Typography variant="caption" sx={{ color: "#a1a1aa" }}>
+                      <CalendarMonthIcon sx={{ color: "#fff", fontSize: 18 }} />
+                      <Typography variant="caption" sx={{ color: "#fff" }}>
                         {exp.period}
                       </Typography>
                     </Stack>
                     <Stack direction="row" alignItems="center" spacing={0.5}>
-                      <PlaceIcon sx={{ color: "#a1a1aa", fontSize: 18 }} />
-                      <Typography variant="caption" sx={{ color: "#a1a1aa" }}>
+                      <PlaceIcon sx={{ color: "#fff", fontSize: 18 }} />
+                      <Typography variant="caption" sx={{ color: "#fff" }}>
                         {exp.location}
                       </Typography>
                     </Stack>

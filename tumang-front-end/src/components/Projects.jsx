@@ -115,10 +115,7 @@ export default function Projects() {
         <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
           Projects
         </Typography>
-        <Typography
-          variant="body1"
-          sx={{ color: "#a1a1aa", mb: 6, fontSize: 18 }}
-        >
+        <Typography variant="body1" sx={{ color: "#fff", mb: 6, fontSize: 18 }}>
           Here are some of my recent projects that showcase my skills and
           experience
         </Typography>
