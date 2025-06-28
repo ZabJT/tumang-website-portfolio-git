@@ -83,7 +83,7 @@ const projects = [
     image: Portfolio1,
     images: [Portfolio1],
     technologies: ["React"],
-    liveUrl: "#",
+    liveUrl: "https://zabdielportfolio.vercel.app",
     githubUrl: "https://github.com/ZabJT/tumang-website-portfolio-git",
   },
 ];
