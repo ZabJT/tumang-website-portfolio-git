@@ -135,7 +135,7 @@ export default function About() {
                     px: 3,
                     py: 1.5,
                     borderRadius: 999,
-                    minWidth: 140,
+                    width: 180,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
