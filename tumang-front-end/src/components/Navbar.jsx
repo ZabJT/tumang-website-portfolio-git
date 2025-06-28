@@ -60,7 +60,7 @@ export default function Navbar() {
                 border: "none",
                 zIndex: 2002,
                 fontSize: 32,
-                mr: 6,
+                mr: 5,
                 p: 1,
                 "&:hover": {
                   background: "rgba(41,121,255,0.08)",

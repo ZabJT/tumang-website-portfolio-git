@@ -33,7 +33,7 @@ const experiences = [
   },
   {
     title:
-      "BS Information Technology - Specialization in Mobile and Web Application",
+      "BS Information Technology - Specializing in Mobile and Web Application",
     company: "National University - Manila",
     location: "Manila, Philippines",
     period: "2022 - Present",
@@ -43,7 +43,7 @@ const experiences = [
   },
   {
     title:
-      "BS Information Technology - Specialization in Web and Mobile Application",
+      "BS Information Technology - Specializing in Web and Mobile Application",
     company: "FEU Institute of Technology",
     location: "Manila, Philippines",
     period: "2022",
