@@ -17,14 +17,28 @@ const techStack = [
     icon: <FaBootstrap style={{ color: "#7952b3", width: 24, height: 24 }} />,
     label: "Bootstrap5",
   },
-  { icon: <CssIcon sx={{ color: "#264de4" }} />, label: "CSS" },
+  {
+    icon: <CssIcon sx={{ color: "#264de4", opacity: 1, fontSize: 24 }} />,
+    label: "CSS",
+  },
   {
     icon: <SiFlutter style={{ color: "#02569b", width: 24, height: 24 }} />,
     label: "Flutter",
   },
-  { icon: <GitHubIcon sx={{ color: "#fff" }} />, label: "Git" },
-  { icon: <HtmlIcon sx={{ color: "#e34c26" }} />, label: "HTML5" },
-  { icon: <JavascriptIcon sx={{ color: "#f7df1e" }} />, label: "JavaScript" },
+  {
+    icon: <GitHubIcon sx={{ color: "#fff", opacity: 1, fontSize: 24 }} />,
+    label: "Git",
+  },
+  {
+    icon: <HtmlIcon sx={{ color: "#e34c26", opacity: 1, fontSize: 24 }} />,
+    label: "HTML5",
+  },
+  {
+    icon: (
+      <JavascriptIcon sx={{ color: "#f7df1e", opacity: 1, fontSize: 24 }} />
+    ),
+    label: "JavaScript",
+  },
   {
     icon: <SiMui style={{ color: "#007fff", width: 24, height: 24 }} />,
     label: "Material-UI",
