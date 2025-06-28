@@ -200,7 +200,7 @@ export default function Hero() {
               {techStack.map((tech) => (
                 <Grid
                   item
-                  xs={6}
+                  xs={4}
                   sm={4}
                   md={2}
                   key={tech.label}
