@@ -10,74 +10,105 @@ import {
   Button,
   Chip,
   Stack,
+  Modal,
+  IconButton,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
+import CloseIcon from "@mui/icons-material/Close";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import metamatch1 from "../assets/metamatch1.png";
+import metamatch2 from "../assets/metamatch2.png";
+import metamatch3 from "../assets/metamatch3.png";
+import metamatch4 from "../assets/metamatch4.png";
+import pacificnorth1 from "../assets/pacificnorth1.png";
+import pacificnorth2 from "../assets/pacificnorth2.png";
+import pacificnorth3 from "../assets/pacificnorth3.png";
+import NUBE1 from "../assets/NUBE1.jpg";
+import NUBE2 from "../assets/NUBE2.jpg";
+import dashboard1 from "../assets/dashboard1.png";
+import dashboard2 from "../assets/dashboard2.png";
+import prescriptive1 from "../assets/prescriptive1.png";
+import ADcounseling1 from "../assets/ADcounseling1.png";
+import Portfolio1 from "../assets/Portfolio1.png";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "DPS - City of Manila Admin Dashboard",
     description:
-      "A full-stack e-commerce website with user authentication, product management, and payment integration.",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "A web system for the Department of Public Services - City of Manila. It is a full-stack web system that allows the administrators and staff to efficiently manage the city's waste collection data. The system is live but you cannot login since both DPS and their Contractor are the only ones who can access it.",
+    image: dashboard1,
+    images: [dashboard1, dashboard2, prescriptive1],
+    technologies: ["JavaScript", "PHP", "MongoDB", "Bootstrap"],
+    liveUrl: "https://dpsmanila-metapass.onrender.com/main/loginpage.php",
   },
   {
-    title: "Task Management App",
+    title: "MetaMatch Website",
     description:
-      "A collaborative task management application with real-time updates and team collaboration features.",
-    image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop",
-    technologies: ["React", "Firebase", "Material-UI"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "Metamatch is a full-stack website that allows users to find the best pc parts for their needs. They can compare prices and specifications of the parts which is useful for those who are not tech-savvy. The website is currently down since our team decided to shut it down after 1 month of hosting it.",
+    image: metamatch2,
+    images: [metamatch1, metamatch2, metamatch3, metamatch4],
+    technologies: ["HTML5", "CSS", "JavaScript", "PHP", "MySQL"],
+    githubUrl: "https://github.com/ZabJT/SampleLoginMetaMatch",
   },
   {
-    title: "Weather Dashboard",
+    title: "Pacific Northwest X-Ray Website",
     description:
-      "A responsive weather application that displays current weather and forecasts for multiple cities.",
-    image:
-      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop",
-    technologies: ["JavaScript", "CSS3", "Weather API"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "This is just a redesign of the original website. I was tasked to redesign the website to make it more modern and user-friendly. No copyright infringement was intended. I did not publish the redesigned version of the website since I am not the owner of the business.",
+    image: pacificnorth1,
+    images: [pacificnorth1, pacificnorth2, pacificnorth3],
+    technologies: ["HTML5", "CSS", "JavaScript"],
   },
   {
-    title: "Portfolio Website",
+    title: "NU Bulldogs Exchange",
     description:
-      "A modern, responsive portfolio website showcasing projects and skills with smooth animations.",
-    image:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop",
-    technologies: ["React", "MUI", "Framer Motion"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "A portal for Bulldogs Exchange. A school-based project for the university's merchandise store. It is only frontend and it is not live.",
+    image: NUBE2,
+    images: [NUBE1, NUBE2],
+    technologies: ["React"],
   },
   {
-    title: "Blog Platform",
-    description:
-      "A full-featured blog platform with user authentication, content management, and comment system.",
-    image:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop",
-    technologies: ["Next.js", "Prisma", "PostgreSQL"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "AD Counseling",
+    description: "A website for AD Counseling. Still in progress. Not yet live",
+    image: ADcounseling1,
+    images: [ADcounseling1],
+    technologies: ["HTML5", "CSS", "JavaScript", "Bootstrap", "PHP", "MongoDB"],
+    githubUrl: "https://github.com/ZabJT/ADCounseling",
   },
   {
-    title: "Chat Application",
+    title: "Zabdiel's Portfolio",
     description:
-      "Real-time chat application with multiple rooms, user presence, and message history.",
-    image:
-      "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=400&h=250&fit=crop",
-    technologies: ["React", "Socket.io", "Express.js"],
+      "A portfolio website for Zabdiel Tumang. It is a full-featured portfolio website with a modern and responsive design. Frontend only.",
+    image: Portfolio1,
+    images: [Portfolio1],
+    technologies: ["React"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/ZabJT/tumang-website-portfolio-git",
   },
 ];
 
 export default function Projects() {
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const [modalImages, setModalImages] = React.useState([]);
+  const [modalIndex, setModalIndex] = React.useState(0);
+
+  const handleCardClick = (images) => {
+    setModalImages(images);
+    setModalIndex(0);
+    setModalOpen(true);
+  };
+
+  const handleClose = () => setModalOpen(false);
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    setModalIndex((prev) => (prev === 0 ? modalImages.length - 1 : prev - 1));
+  };
+  const handleNext = (e) => {
+    e.stopPropagation();
+    setModalIndex((prev) => (prev === modalImages.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <Box id="projects" sx={{ py: 12, bgcolor: "#232b39", color: "#fff" }}>
       <Box sx={{ maxWidth: 1200, mx: "auto", px: 3 }}>
@@ -91,21 +122,32 @@ export default function Projects() {
           Here are some of my recent projects that showcase my skills and
           experience
         </Typography>
-        <Grid container spacing={4}>
+        <Grid container spacing={4} justifyContent="center">
           {projects.map((project, i) => (
-            <Grid item xs={12} sm={6} md={4} key={i}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              key={i}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
               <Card
                 sx={{
                   bgcolor: "#181f2a",
                   color: "#fff",
                   borderRadius: 3,
-                  boxShadow: "0 4px 24px #0002",
+                  boxShadow: "none",
                   transition: "transform 0.2s",
+                  width: { xs: "100%", sm: 340, md: 340 },
+                  maxWidth: 340,
+                  cursor: "pointer",
                   "&:hover": {
                     transform: "scale(1.03)",
-                    boxShadow: "0 8px 32px #0004",
+                    boxShadow: "0 12px 24px -8px rgba(0, 0, 0, 0.56)",
                   },
                 }}
+                onClick={() => handleCardClick(project.images)}
               >
                 <CardMedia
                   component="img"
@@ -114,29 +156,34 @@ export default function Projects() {
                   alt={project.title}
                   sx={{ objectFit: "cover" }}
                 />
-                <CardContent>
+                <CardContent sx={{ pb: 0 }}>
                   <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
                     {project.title}
                   </Typography>
                   <Typography variant="body2" sx={{ color: "#a1a1aa", mb: 2 }}>
                     {project.description}
                   </Typography>
-                  <Stack direction="row" spacing={1} flexWrap="wrap">
-                    {project.technologies.map((tech, j) => (
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    flexWrap="wrap"
+                    sx={{ mb: 2, rowGap: 0.5 }}
+                  >
+                    {[...project.technologies].sort().map((tech, j) => (
                       <Chip
                         key={j}
                         label={tech}
                         size="small"
                         sx={{
                           bgcolor: "#232b39",
-                          color: "#2979FF",
+                          color: "#f5c61d",
                           fontWeight: 500,
                         }}
                       />
                     ))}
                   </Stack>
                 </CardContent>
-                <CardActions>
+                <CardActions sx={{ mt: 1, pb: 2 }}>
                   <Button
                     size="small"
                     href={project.liveUrl}
@@ -147,6 +194,7 @@ export default function Projects() {
                       "&:hover": { color: "#1565C0" },
                     }}
                     startIcon={<LaunchIcon />}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     Live
                   </Button>
@@ -156,6 +204,7 @@ export default function Projects() {
                     target="_blank"
                     sx={{ color: "#fff", fontWeight: 600 }}
                     startIcon={<GitHubIcon />}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     Code
                   </Button>
@@ -164,6 +213,102 @@ export default function Projects() {
             </Grid>
           ))}
         </Grid>
+        <Modal
+          open={modalOpen}
+          onClose={handleClose}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 2000,
+          }}
+        >
+          <Box
+            onClick={handleClose}
+            sx={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              bgcolor: "rgba(0,0,0,0.92)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 2001,
+            }}
+          >
+            <Box
+              onClick={(e) => e.stopPropagation()}
+              sx={{
+                position: "relative",
+                maxWidth: 800,
+                width: "90vw",
+                maxHeight: "90vh",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                outline: "none",
+              }}
+            >
+              <IconButton
+                onClick={handleClose}
+                sx={{
+                  position: "absolute",
+                  top: 8,
+                  right: 8,
+                  color: "#000000",
+                  zIndex: 10,
+                }}
+              >
+                <CloseIcon fontSize="large" />
+              </IconButton>
+              {modalImages.length > 1 && (
+                <IconButton
+                  onClick={handlePrev}
+                  sx={{
+                    position: "absolute",
+                    left: 8,
+                    top: "50%",
+                    color: "#000000",
+                    zIndex: 10,
+                    transform: "translateY(-50%)",
+                  }}
+                >
+                  <ArrowBackIosNewIcon fontSize="large" />
+                </IconButton>
+              )}
+              <img
+                src={modalImages[modalIndex]}
+                alt="Project screenshot"
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "80vh",
+                  borderRadius: 12,
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.5)",
+                  background: "#222",
+                  objectFit: "contain",
+                }}
+              />
+              {modalImages.length > 1 && (
+                <IconButton
+                  onClick={handleNext}
+                  sx={{
+                    position: "absolute",
+                    right: 8,
+                    top: "50%",
+                    color: "#000000",
+                    zIndex: 10,
+                    transform: "translateY(-50%)",
+                  }}
+                >
+                  <ArrowForwardIosIcon fontSize="large" />
+                </IconButton>
+              )}
+            </Box>
+          </Box>
+        </Modal>
       </Box>
     </Box>
   );

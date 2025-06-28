@@ -88,7 +88,7 @@ export default function Contact() {
           Have a project in mind or want to work together? I'd love to hear from
           you!
         </Typography>
-        <Grid container spacing={6}>
+        <Grid container spacing={6} justifyContent="center">
           {/* Contact Info */}
           <Grid item xs={12} md={5}>
             <Card

@@ -64,12 +64,12 @@ export default function Experience() {
           variant="body1"
           sx={{ color: "#a1a1aa", mb: 6, fontSize: 18 }}
         >
-          My journey and the experiences that shaped my development skills. I
-          also included my previous resume here in case you'd like to see more
-          of my past work experiences. Please note it may not always be fully up
-          to date.{" "}
+          My journey and the experiences that shaped my programming skills. I
+          also included my previous resume here in case you would like to see
+          more of my past work experiences. Please note it may not always be
+          fully up to date.{" "}
           <a
-            href="/resume.pdf"
+            href="/TumangResume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -96,7 +96,7 @@ export default function Experience() {
                   bgcolor: "#232b39",
                   color: "#fff",
                   borderRadius: 3,
-                  boxShadow: "0 0 8px rgba(0, 0, 0, 0.1)",
+                  boxShadow: "none",
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
@@ -150,7 +150,7 @@ export default function Experience() {
                         size="small"
                         sx={{
                           bgcolor: "#181f2a",
-                          color: "#2979FF",
+                          color: "#f5c61d",
                           fontWeight: 500,
                         }}
                       />
