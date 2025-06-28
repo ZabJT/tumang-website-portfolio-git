@@ -17,6 +17,9 @@ import PlaceIcon from "@mui/icons-material/Place";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import emailjs from "emailjs-com";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 const contactInfo = [
   {
@@ -64,6 +67,8 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarError, setSnackbarError] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -71,8 +76,28 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    emailjs
+      .send(
+        "service_n1p5vl3",
+        "template_vcu6mqx",
+        formData,
+        "gdQMVlt_oNfFHccVe"
+      )
+      .then(
+        () => {
+          setSnackbarOpen(true);
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        },
+        () => {
+          setSnackbarError(true);
+        }
+      );
+  };
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === "clickaway") return;
+    setSnackbarOpen(false);
+    setSnackbarError(false);
   };
 
   return (
@@ -96,7 +121,7 @@ export default function Contact() {
                 bgcolor: "#232b39",
                 color: "#fff",
                 borderRadius: 3,
-                boxShadow: "0 4px 24px #0002",
+                boxShadow: "none",
                 mb: 4,
               }}
             >
@@ -168,7 +193,7 @@ export default function Contact() {
                 bgcolor: "#232b39",
                 color: "#fff",
                 borderRadius: 3,
-                boxShadow: "0 4px 24px #0002",
+                boxShadow: "none",
               }}
             >
               <CardContent>
@@ -245,6 +270,7 @@ export default function Contact() {
                       bgcolor: "#181f2a",
                       input: { color: "#fff" },
                       label: { color: "#a1a1aa" },
+                      textarea: { color: "#fff" },
                     }}
                     InputProps={{ disableUnderline: true }}
                   />
@@ -270,6 +296,34 @@ export default function Contact() {
           </Grid>
         </Grid>
       </Box>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={4000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <MuiAlert
+          onClose={handleSnackbarClose}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          Message sent successfully!
+        </MuiAlert>
+      </Snackbar>
+      <Snackbar
+        open={snackbarError}
+        autoHideDuration={4000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <MuiAlert
+          onClose={handleSnackbarClose}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
+          Failed to send message. Please try again.
+        </MuiAlert>
+      </Snackbar>
     </Box>
   );
 }

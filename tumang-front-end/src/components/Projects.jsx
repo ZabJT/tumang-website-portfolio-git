@@ -79,7 +79,7 @@ const projects = [
   {
     title: "Zabdiel's Portfolio",
     description:
-      "A portfolio website for Zabdiel Tumang. It is a full-featured portfolio website with a modern and responsive design. Frontend only.",
+      "A portfolio website for Zabdiel Tumang. It is a full-featured portfolio website with a modern and responsive design.",
     image: Portfolio1,
     images: [Portfolio1],
     technologies: ["React"],
@@ -258,8 +258,14 @@ export default function Projects() {
                   position: "absolute",
                   top: 8,
                   right: 8,
-                  color: "#000000",
+                  color: "#fff",
+                  background: "rgba(30,30,30,0.55)",
+                  backdropFilter: "blur(8px)",
+                  boxShadow: "0 2px 8px 0 #0005",
                   zIndex: 10,
+                  "&:hover": {
+                    background: "rgba(30,30,30,0.75)",
+                  },
                 }}
               >
                 <CloseIcon fontSize="large" />
@@ -271,9 +277,15 @@ export default function Projects() {
                     position: "absolute",
                     left: 8,
                     top: "50%",
-                    color: "#000000",
+                    color: "#fff",
+                    background: "rgba(30,30,30,0.55)",
+                    backdropFilter: "blur(8px)",
+                    boxShadow: "0 2px 8px 0 #0005",
                     zIndex: 10,
                     transform: "translateY(-50%)",
+                    "&:hover": {
+                      background: "rgba(30,30,30,0.75)",
+                    },
                   }}
                 >
                   <ArrowBackIosNewIcon fontSize="large" />
@@ -298,9 +310,15 @@ export default function Projects() {
                     position: "absolute",
                     right: 8,
                     top: "50%",
-                    color: "#000000",
+                    color: "#fff",
+                    background: "rgba(30,30,30,0.55)",
+                    backdropFilter: "blur(8px)",
+                    boxShadow: "0 2px 8px 0 #0005",
                     zIndex: 10,
                     transform: "translateY(-50%)",
+                    "&:hover": {
+                      background: "rgba(30,30,30,0.75)",
+                    },
                   }}
                 >
                   <ArrowForwardIosIcon fontSize="large" />

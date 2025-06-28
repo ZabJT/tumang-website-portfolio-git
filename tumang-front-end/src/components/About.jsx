@@ -79,8 +79,8 @@ export default function About() {
         />
         {/* Services horizontally */}
         <Grid container spacing={3} justifyContent="center" sx={{ mb: 6 }}>
-          {services.map((service, i) => (
-            <Grid item xs={12} sm={4} md={4} key={i}>
+          {services.map((service) => (
+            <Grid item xs={12} sm={4} md={4} key={service.title}>
               <Card
                 sx={{
                   bgcolor: "#181f2a",
@@ -119,7 +119,7 @@ export default function About() {
             Development Tools I Use
           </Typography>
           <Grid container spacing={2} justifyContent="center">
-            {devToolsSorted.map((tool, i) => (
+            {devToolsSorted.map((tool) => (
               <Grid
                 item
                 xs={12}

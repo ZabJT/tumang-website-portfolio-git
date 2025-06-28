@@ -1,8 +1,16 @@
-#root {
-  max-width: 1280px;
+/* Custom styles for the portfolio */
+.portfolio-container {
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  text-align: left;
+}
+
+/* Remove default Vite styles that might conflict */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 .logo {

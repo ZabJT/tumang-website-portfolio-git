@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Stack,
-  Chip,
-  useTheme,
-  Grid,
-} from "@mui/material";
+import { Box, Typography, Button, Stack, Chip, Grid } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import PublicIcon from "@mui/icons-material/Public";
 import StorageIcon from "@mui/icons-material/Storage";
@@ -75,7 +67,6 @@ styleSheet.innerText = `@keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { o
 document.head.appendChild(styleSheet);
 
 export default function Hero() {
-  const theme = useTheme();
   const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
@@ -188,7 +179,7 @@ export default function Hero() {
           </Stack>
           <Box sx={{ mt: 4 }}>
             <Grid container spacing={2}>
-              {techStack.map((tech, i) => (
+              {techStack.map((tech) => (
                 <Grid
                   item
                   xs={12}
