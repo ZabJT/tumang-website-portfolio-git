@@ -19,7 +19,7 @@ const experiences = [
     location: "Manila, Philippines",
     period: "2025 - Present",
     description:
-      "Currently converting our web system from JavaScript and PHP to MERN stack.",
+      "Currently converting our thesis project's web system from JavaScript and PHP to MERN stack.",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
   },
   {

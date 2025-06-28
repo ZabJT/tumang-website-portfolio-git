@@ -79,7 +79,7 @@ const projects = [
   {
     title: "Zabdiel's Portfolio",
     description:
-      "A portfolio website for Zabdiel Tumang. It is a full-featured portfolio website with a modern and responsive design.",
+      "A portfolio website to compile my projects and experiences. It is a full-featured portfolio website with a modern and responsive design while maintaining a user-friendly interface.",
     image: Portfolio1,
     images: [Portfolio1],
     technologies: ["React"],
