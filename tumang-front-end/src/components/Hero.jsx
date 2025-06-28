@@ -203,20 +203,34 @@ export default function Hero() {
                   display="flex"
                   justifyContent="center"
                 >
-                  <Chip
-                    icon={tech.icon}
-                    label={tech.label}
+                  <Box
                     sx={{
+                      display: "flex",
+                      alignItems: "center",
                       bgcolor: "#232b39",
                       color: "#fff",
                       fontWeight: 500,
                       fontSize: 14,
-                      px: 1,
+                      px: 2,
+                      py: 1,
                       width: 140,
+                      borderRadius: 999,
                       justifyContent: "flex-start",
-                      "& .MuiChip-icon": { opacity: 1 },
+                      gap: 1.2,
+                      boxShadow: "0 2px 8px 0 #0002",
                     }}
-                  />
+                  >
+                    <span
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginRight: 8,
+                      }}
+                    >
+                      {tech.icon}
+                    </span>
+                    {tech.label}
+                  </Box>
                 </Grid>
               ))}
             </Grid>
