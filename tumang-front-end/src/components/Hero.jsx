@@ -200,7 +200,6 @@ export default function Hero() {
                       px: 1,
                       width: 140,
                       justifyContent: "flex-start",
-                      "& .MuiChip-icon": { color: "#2979FF" },
                     }}
                   />
                 </Grid>
