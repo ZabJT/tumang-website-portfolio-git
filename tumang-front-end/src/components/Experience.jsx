@@ -39,7 +39,19 @@ const experiences = [
     period: "2022 - Present",
     description:
       "Developed responsive websites and enhanced UI/UX designs as part of academic project requirements.",
-    technologies: ["HTML", "CSS", "JavaScript", "React"],
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "MySQL",
+      "PHP",
+      "Git",
+      "Java",
+      "MSSQL",
+    ],
   },
   {
     title:
