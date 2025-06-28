@@ -192,7 +192,11 @@ export default function Hero() {
             </Button>
           </Stack>
           <Box sx={{ mt: 4 }}>
-            <Grid container spacing={2}>
+            <Grid
+              container
+              spacing={2}
+              justifyContent={{ xs: "center", md: "flex-start" }}
+            >
               {techStack.map((tech) => (
                 <Grid
                   item
@@ -201,7 +205,7 @@ export default function Hero() {
                   md={2}
                   key={tech.label}
                   display="flex"
-                  justifyContent="center"
+                  justifyContent={{ xs: "center", md: "flex-start" }}
                 >
                   <Box
                     sx={{
@@ -213,9 +217,10 @@ export default function Hero() {
                       fontSize: 14,
                       px: 2,
                       py: 1,
-                      width: 140,
+                      width: { xs: "100%", sm: 140 },
+                      maxWidth: 140,
                       borderRadius: 999,
-                      justifyContent: "flex-start",
+                      justifyContent: "center",
                       gap: 1.2,
                       boxShadow: "0 2px 8px 0 #0002",
                     }}
