@@ -25,7 +25,9 @@ const navLinks = [
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery("(max-width:1200px)");
+
+  console.log("isMobile:", isMobile, "window width:", window.innerWidth);
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -39,7 +41,7 @@ export default function Navbar() {
       elevation={0}
       sx={{ bgcolor: "#181f2a", borderBottom: "1px solid #232b39" }}
     >
-      <Toolbar sx={{ maxWidth: 1200, mx: "auto", width: "100%" }}>
+      <Toolbar sx={{ maxWidth: 1200, mx: "auto", width: "100%", pr: 6 }}>
         <Typography
           variant="h6"
           sx={{ flexGrow: 1, fontWeight: 700, letterSpacing: 1 }}
@@ -52,19 +54,52 @@ export default function Navbar() {
               color="inherit"
               edge="end"
               onClick={() => setDrawerOpen(true)}
+              sx={{
+                color: "#fff",
+                background: "none",
+                border: "none",
+                zIndex: 2002,
+                fontSize: 32,
+                mr: 6,
+                p: 1,
+                "&:hover": {
+                  background: "rgba(41,121,255,0.08)",
+                },
+              }}
             >
-              <MenuIcon />
+              <MenuIcon sx={{ fontSize: 32, color: "#fff" }} />
             </IconButton>
             <Drawer
               anchor="right"
               open={drawerOpen}
               onClose={() => setDrawerOpen(false)}
+              PaperProps={{
+                sx: {
+                  bgcolor: "#181f2a",
+                  color: "#fff",
+                  borderBottom: "1px solid #232b39",
+                },
+              }}
             >
               <Box sx={{ width: 220 }}>
                 <List>
                   {navLinks.map((link) => (
                     <ListItem key={link.id} disablePadding>
-                      <ListItemButton onClick={() => scrollToSection(link.id)}>
+                      <ListItemButton
+                        onClick={() => scrollToSection(link.id)}
+                        sx={{
+                          color: "#fff",
+                          fontWeight: 500,
+                          fontSize: 18,
+                          transition: "color 0.2s, transform 0.1s",
+                          "&:hover": {
+                            color: "#2979FF",
+                          },
+                          "&:active": {
+                            transform: "scale(0.96)",
+                          },
+                        }}
+                      >
                         <ListItemText primary={link.label} />
                       </ListItemButton>
                     </ListItem>
