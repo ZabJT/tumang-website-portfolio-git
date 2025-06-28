@@ -200,8 +200,8 @@ export default function Hero() {
               {techStack.map((tech) => (
                 <Grid
                   item
-                  xs={12}
-                  sm={2}
+                  xs={6}
+                  sm={4}
                   md={2}
                   key={tech.label}
                   display="flex"
