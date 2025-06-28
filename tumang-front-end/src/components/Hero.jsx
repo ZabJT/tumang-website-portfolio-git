@@ -171,9 +171,9 @@ export default function Hero() {
                 boxShadow: "none",
                 "&:hover": { bgcolor: "#1565C0" },
               }}
-              onClick={() => scrollToSection("projects")}
+              onClick={() => scrollToSection("contact")}
             >
-              Got a project?
+              Email me!
             </Button>
             <Button
               variant="outlined"
@@ -246,16 +246,16 @@ export default function Hero() {
           <Box
             sx={{
               position: "relative",
-              width: 320,
-              height: 320,
+              width: { xs: 180, sm: 240, md: 320, lg: 380 },
+              height: { xs: 180, sm: 240, md: 320, lg: 380 },
               borderRadius: "50%",
               background:
-                "radial-gradient(circle at 60% 40%, #2979FF 0%, #1565C0 100%)",
+                "radial-gradient(circle at 60% 40%, #2979FF 0%, #1565C0 60%, #181f2a 100%)",
               p: "4px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 0 40px 0 #2979FF33",
+              boxShadow: "0 0 100px 8px #2979FF55, 0 0 50px 16px #1565C055",
             }}
           >
             <Box
