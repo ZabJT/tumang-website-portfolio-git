@@ -17,6 +17,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import emailjs from "emailjs-com";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
@@ -57,6 +58,11 @@ const socialLinks = [
     icon: <FacebookIcon />,
     label: "Facebook",
     url: "https://www.facebook.com/zabjt.28/",
+  },
+  {
+    icon: <InstagramIcon />,
+    label: "Instagram",
+    url: "https://www.instagram.com/zab.jt28/",
   },
 ];
 
@@ -164,7 +170,7 @@ export default function Contact() {
                 <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
                   Follow Me
                 </Typography>
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row" spacing={2} justifyContent="center">
                   {socialLinks.map((social, i) => (
                     <IconButton
                       key={i}
