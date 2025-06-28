@@ -14,31 +14,42 @@ import PlaceIcon from "@mui/icons-material/Place";
 
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company: "Tech Startup Inc.",
-    location: "Remote",
-    period: "2024 - Present",
+    title: "Project Manager / Full-Stack Web Developer",
+    company: "National University - Manila",
+    location: "Manila, Philippines",
+    period: "2025 - Present",
     description:
-      "Developing web applications using React, Node.js, and MongoDB. Working on both frontend and backend development.",
-    technologies: ["React", "Node.js", "MongoDB", "Express.js"],
+      "Currently converting our web system from JavaScript and PHP to MERN stack.",
+    technologies: ["MongoDB", "Express", "React", "Node.js"],
   },
   {
-    title: "Frontend Developer Intern",
-    company: "Digital Agency Co.",
+    title: "Project Manager / Full-Stack Web Developer",
+    company: "National University - Manila",
     location: "Manila, Philippines",
-    period: "2023 - 2024",
+    period: "2024 - 2025",
     description:
-      "Created responsive websites and worked on UI/UX improvements. Collaborated with designers and backend developers.",
+      "Developed a web system using JavaScript, PHP, and MongoDB for the Department of Public Services - City of Manila.",
+    technologies: ["JavaScript", "PHP", "MongoDB"],
+  },
+  {
+    title:
+      "BS Information Technology - Specialization in Mobile and Web Application",
+    company: "National University - Manila",
+    location: "Manila, Philippines",
+    period: "2022 - Present",
+    description:
+      "Developed responsive websites and enhanced UI/UX designs as part of academic project requirements.",
     technologies: ["HTML", "CSS", "JavaScript", "React"],
   },
   {
-    title: "Freelance Web Developer",
-    company: "Self-employed",
-    location: "Remote",
-    period: "2022 - 2023",
+    title:
+      "BS Information Technology - Specialization in Web and Mobile Application",
+    company: "FEU Institute of Technology",
+    location: "Manila, Philippines",
+    period: "2022",
     description:
-      "Built custom websites for small businesses and personal clients. Handled everything from design to deployment.",
-    technologies: ["WordPress", "HTML", "CSS", "JavaScript"],
+      "Learned the basics of programming that helped me wrote my first line of code using C++.",
+    technologies: ["C++"],
   },
 ];
 
@@ -53,22 +64,50 @@ export default function Experience() {
           variant="body1"
           sx={{ color: "#a1a1aa", mb: 6, fontSize: 18 }}
         >
-          My professional journey and the experiences that shaped my development
-          skills
+          My journey and the experiences that shaped my development skills. I
+          also included my previous resume here in case you'd like to see more
+          of my past work experiences. Please note it may not always be fully up
+          to date.{" "}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#2979FF",
+              textDecoration: "underline",
+              fontWeight: 500,
+            }}
+          >
+            click here
+          </a>
+          .
         </Typography>
-        <Grid container spacing={4}>
+        <Grid container spacing={4} alignItems="stretch">
           {experiences.map((exp, i) => (
-            <Grid item xs={12} md={4} key={i}>
+            <Grid
+              item
+              xs={12}
+              md={12}
+              key={i}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
               <Card
                 sx={{
                   bgcolor: "#232b39",
                   color: "#fff",
                   borderRadius: 3,
-                  boxShadow: "0 4px 24px #0002",
+                  boxShadow: "0 0 8px rgba(0, 0, 0, 0.1)",
                   height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  flex: 1,
+                  width: { xs: "100%", sm: "90%", md: 700 },
+                  maxWidth: 700,
                 }}
               >
-                <CardContent>
+                <CardContent
+                  sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}
+                >
                   <Stack direction="row" alignItems="center" spacing={1} mb={1}>
                     <WorkIcon sx={{ color: "#2979FF" }} />
                     <Typography variant="h6" sx={{ fontWeight: 600 }}>
@@ -97,7 +136,10 @@ export default function Experience() {
                       </Typography>
                     </Stack>
                   </Stack>
-                  <Typography variant="body2" sx={{ color: "#a1a1aa", mb: 2 }}>
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "#a1a1aa", mb: 2, flexGrow: 1 }}
+                  >
                     {exp.description}
                   </Typography>
                   <Stack direction="row" spacing={1} flexWrap="wrap">
