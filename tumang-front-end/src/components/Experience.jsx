@@ -63,8 +63,8 @@ export default function Experience() {
         <Typography variant="body1" sx={{ color: "#fff", mb: 6, fontSize: 18 }}>
           My journey and the experiences that shaped my programming skills. I
           also included my previous resume here in case you would like to see
-          more of my past work experiences. Please note it may not always be
-          fully up to date.{" "}
+          more of my past work experiences. Please note that it may not always
+          be fully up to date.{" "}
           <a
             href="/TumangResume.pdf"
             target="_blank"

@@ -32,6 +32,8 @@ import dashboard2 from "../assets/dashboard2.png";
 import prescriptive1 from "../assets/prescriptive1.png";
 import ADcounseling1 from "../assets/ADcounseling1.png";
 import Portfolio1 from "../assets/Portfolio1.png";
+import Portfolio2 from "../assets/Portfolio2.jpg";
+import Portfolio3 from "../assets/Portfolio3.jpg";
 
 const projects = [
   {
@@ -42,6 +44,7 @@ const projects = [
     images: [dashboard1, dashboard2, prescriptive1],
     technologies: ["JavaScript", "PHP", "MongoDB", "Bootstrap"],
     liveUrl: "https://dpsmanila-metapass.onrender.com/main/loginpage.php",
+    githubUrl: "https://github.com/ZabJT/metapass-dps-git",
   },
   {
     title: "MetaMatch Website",
@@ -81,7 +84,7 @@ const projects = [
     description:
       "A portfolio website to compile my projects and experiences. It is a full-featured portfolio website with a modern and responsive design while maintaining a user-friendly interface.",
     image: Portfolio1,
-    images: [Portfolio1],
+    images: [Portfolio1, Portfolio2, Portfolio3],
     technologies: ["React"],
     liveUrl: "https://zabdielportfolio.vercel.app",
     githubUrl: "https://github.com/ZabJT/tumang-website-portfolio-git",
